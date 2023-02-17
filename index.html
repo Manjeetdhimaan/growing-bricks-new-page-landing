@@ -13,7 +13,7 @@
     <body>
         <ul id="side-menu" class="sidebarstyles__SidebarItems-sc-1h6ky56-2
             gXcemy">
-            <span onclick="closeMenu()" style="float:left; color:white; font-size: 24px;cursor: pointer;">&#x2715;</span>
+            <span class="desktop-only" onclick="closeMenu()" style="float:left; color:white; font-size: 24px;cursor: pointer;">&#x2715;</span>
             <div
                 class="sidebarstyles__ItemsContainer-sc-1h6ky56-1 eeTbLh">
                 <li><a href="#projects">Projects</a></li>
@@ -118,12 +118,15 @@
                                     88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2
                                     31.9C110.1 384 224 384 224 384s113.9 0
                                     142.2-7.7c15.7-4.2 28-16.1 32.2-31.9
-                                    7.6-28.5 7.6-88.1 7.6-88.1z"></path></svg></a></p></li></div></ul>
+                                    7.6-28.5 7.6-88.1 7.6-88.1z"></path></svg></a></p></li>
+                                </div>
+                                <span onclick="closeMenu()" class="mobile-only" style="float:left; color:white; font-size: 24px;cursor: pointer;">&#x2715;</span>
+                            </ul>
         <div
             id="__next"><div class="layoutstyles__StyledLayout-sc-1dmovpg-0
                 iwUAUC"><div class="containerstyles__StyledContainer-sc-vj1b3n-0
                     jYgPTX"><nav class="navbarstyles__StyledNav-sc-3ql7pk-3
-                        dgoIKB"><div class="navbarstyles__LNC-sc-3ql7pk-0
+                        dgoIKB topheader"><div class="navbarstyles__LNC-sc-3ql7pk-0
                             VIrfp"><a href="index.html"><div
                                     style="position:relative"><div
                                         style="overflow:hidden;box-sizing:border-box;display:inline-block;position:relative;width:100px;height:73px"><img
@@ -3062,5 +3065,7 @@
     element.classList.remove("open");
   }
                             </script>
+
+                            <script src="./js/custom.js"></script>
     </body>
 </html>

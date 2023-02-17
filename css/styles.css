@@ -5127,3 +5127,40 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
+.topheader {
+    transition: 1.5s ease;
+    /* min-height: 100px; */
+  }
+  .active-topheader {
+    background-color: rgba(0, 0, 0, 0.85)!important;
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  @media(min-width: 501px) {
+    .desktop-only {
+        display: block;
+    }
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media(max-width: 500px) {
+    .mobile-only {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+    }
+  }
