@@ -507,7 +507,7 @@ data-styled.g11[id="navbarstyles__SNM-sc-3ql7pk-2"] {
     content: "jpBpdZ,";
 } /*!sc*/
 .dgoIKB {
-    background-color: #212121;
+    background-color: #fff;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -552,7 +552,7 @@ data-styled.g13[id="navbarstyles__CityContainer-sc-3ql7pk-4"] {
     content: "pAMyq,";
 } /*!sc*/
 .bOsAVt {
-    color: #fff;
+    color: #333;
     font-size: 3rem;
     cursor: pointer;
 } /*!sc*/
@@ -1560,7 +1560,7 @@ data-styled.g1[id="sc-global-bfHKrj1"] {
     width: 100%;
     max-width: 100%;
     padding: 0;
-    background-color: #212121;
+    background-color: #fff;
     background-size: cover;
     background-position: center;
 } /*!sc*/
@@ -1742,7 +1742,7 @@ data-styled.g11[id="navbarstyles__SNM-sc-3ql7pk-2"] {
     content: "jpBpdZ,";
 } /*!sc*/
 .dgoIKB {
-    background-color: #212121;
+    background-color: #fff;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1787,7 +1787,7 @@ data-styled.g13[id="navbarstyles__CityContainer-sc-3ql7pk-4"] {
     content: "pAMyq,";
 } /*!sc*/
 .bOsAVt {
-    color: #fff;
+    color: #333;
     font-size: 3rem;
     cursor: pointer;
 } /*!sc*/
@@ -3300,7 +3300,7 @@ data-styled.g13[id="navbarstyles__CityContainer-sc-3ql7pk-4"] {
     content: "pAMyq,";
 } /*!sc*/
 .bOsAVt {
-    color: #fff;
+    color: #333;
     font-size: 3rem;
     cursor: pointer;
 } /*!sc*/
@@ -4294,7 +4294,7 @@ data-styled.g11[id="navbarstyles__SNM-sc-3ql7pk-2"] {
     content: "jpBpdZ,";
 } /*!sc*/
 .dgoIKB {
-    background-color: #212121;
+    background-color: #fff;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4339,7 +4339,7 @@ data-styled.g13[id="navbarstyles__CityContainer-sc-3ql7pk-4"] {
     content: "pAMyq,";
 } /*!sc*/
 .bOsAVt {
-    color: #fff;
+    color: #333;
     font-size: 3rem;
     cursor: pointer;
 } /*!sc*/
@@ -5134,7 +5134,7 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     /* min-height: 100px; */
   }
   .active-topheader {
-    background-color: rgba(0, 0, 0, 0.85)!important;
+    background-color: #fff!important;
     position: -webkit-sticky;
     position: fixed;
     top: 0;
@@ -5251,3 +5251,7 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
         -webkit-transform: rotate(360deg);
     }
   }
+
+  #side-menu{
+    box-shadow:0 0 0 10000px rgba(0,0,0,.70);
+   }
