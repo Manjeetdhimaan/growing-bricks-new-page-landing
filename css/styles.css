@@ -2607,15 +2607,31 @@ data-styled.g172[id="banner-image-large__BackgroundContaier-sc-b8eo9a-0"] {
     padding: 2%;
     transition: all 0.3s linear 0s;
 }
+
+
+@media(max-width: 800px) {
+    .hgmTeU {
+       margin-top: 18rem!important;
+       /* margin-bottom: 46rem!important; */
+    }
+}
+
 @media(max-width: 500px) {
     .dQVauX {
        margin-top: 46rem!important;
        /* margin-bottom: 46rem!important; */
     }
-    .eCzQgM {
-       margin-top: 46rem!important;
-       /* margin-bottom: 46rem!important; */
+    .hgmTeU {
+        margin-top: 35rem!important;
     }
+  
+}
+
+@media(max-width: 450px) {
+    .hgmTeU {
+        margin-top: 45rem!important;
+    }
+  
 }
 
 .kfMgwb {
@@ -5165,7 +5181,7 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     .mobile-only {
         display: block;
         position: fixed;
-        bottom: 20px;
+        bottom: 100px;
     }
     .mobile-only-icon {
         display: block;
