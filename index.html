@@ -3163,14 +3163,16 @@
                                     dMHAui">Contact Our Experts</h4><div
                                     class="formstyles__FormField-sc-1gtykkv-3
                                     gJLPhK"><input type="text" name="name"
-                                        placeholder="Name"
+                                        placeholder="Name" id="name"
                                         class="formstyles__FormInput-sc-1gtykkv-4
                                         cDhoUR" value=""></div><div
                                     class="formstyles__FormField-sc-1gtykkv-3
-                                    gJLPhK"><select name="countryCode"
+                                    gJLPhK">
+                                    <select name="countryCode"
                                         width="25%"
                                         class="formstyles__FormSelect-sc-1gtykkv-6
-                                        gNToJT"><option value="India">+91 🇮🇳
+                                        gNToJT">
+                                        <option value="India">+91 🇮🇳
                                             (India)</option><option
                                             value="Andorra">+376 🇦🇩 (Andorra)</option><option
                                             value="United Arab Emirates">+971
@@ -3554,17 +3556,17 @@
                                             value="Zimbabwe">+263 🇿🇼
                                             (Zimbabwe)</option></select><input
                                         type="number" name="phone" width="72.5%"
-                                        placeholder="Phone"
+                                        placeholder="Phone" id="phone"
                                         class="formstyles__FormInput-sc-1gtykkv-4
                                         fvMssK" value=""></div><div
                                     class="formstyles__FormField-sc-1gtykkv-3
                                     gJLPhK"><input type="text" name="email"
-                                        placeholder="Email"
+                                        placeholder="Email" id="email"
                                         class="formstyles__FormInput-sc-1gtykkv-4
                                         cDhoUR" value=""></div><div
                                     class="formstyles__FormField-sc-1gtykkv-3
                                     gJLPhK"><textarea type="text" name="message"
-                                        placeholder="Message (optional)"
+                                        placeholder="Message (optional)" id="msg"
                                         class="formstyles__FormInputArea-sc-1gtykkv-5
                                         fCOWiv"></textarea></div><p
                                     style="margin-bottom: 1rem; font-size: 10px;
@@ -3573,7 +3575,7 @@
                                     Call, SMS, Email or WhatsApp me about its
                                     products and offers. This consent overrides
                                     any registration for DNC / NDNC.</p><button
-                                    width="fullwidth"
+                                    width="fullwidth" id="form-submit"
                                     class="buttonstyles__StyledButton-sc-3pwzzf-0
                                     dIjrfJ"><svg stroke="currentColor"
                                         fill="currentColor" stroke-width="0"
@@ -3762,6 +3764,175 @@
                                         vrJvM">Contact Us</a></div></div></div><div
                             class="footerstyles__Copyrights-sc-1f256ri-2 iGezq">Copyright
                             © 2020 Growing Bricks.com</div></div></footer></div></div>
+
+
+                            <div id="myDIV"></div>
+                            <div id="serverErrors"> </div>
+                            <div id="serverSuccess"> </div>
+                          
+                            <script>
+                              const submitBTN = document.getElementById('form-submit');
+                              const submitBTNModal = document.getElementById('form-submit-modal');
+                              const serverErrorsDIV = document.getElementById('serverErrors');
+                              const serverSuccessDIV = document.getElementById('serverSuccess');
+                          
+                              const name = document.getElementById('name');
+                              const email = document.getElementById('email');
+                              const phone = document.getElementById('phone');
+                          
+                              const nameModal = document.getElementById('name-modal');
+                              const emailModal = document.getElementById('email-modal');
+                              const phoneModal= document.getElementById('phone-modal');
+                          
+                              const deleteBTN = document.getElementById('cross');
+                          
+                              closeErr = (e) => {
+                                if(e === 'error') {
+                                  serverErrorsDIV.style.visibility = 'hidden';
+                                serverErrorsDIV.style.opacity = '0';
+                                serverErrorsDIV.style.transform = "translate(-50%, -50px)";
+                                }
+                                serverSuccessDIV.style.visibility = 'hidden';
+                                serverSuccessDIV.style.opacity = '0';
+                                serverSuccessDIV.style.transform = "translate(-50%, -50px)";
+                              }
+                          
+                              submitBTN.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if ((!email || email.value === '') || (!name || name.value === '')) {
+                                  alert('Please fill all required values')
+                                  return;
+                                }
+                          
+                              
+                          
+                                // const data = new FormData();
+                                // data.append("json", JSON.stringify(payload));
+                          
+                                const div = document.createElement('div');
+                                div.style.alignItems = 'center';
+                                // const iCross = document.createElement('i');
+                                // iCross.setAttribute('class', 'bi bi-backspace');
+                                // iCross.style.padding = '0 0 6px 8px'
+                                div.setAttribute("class", "loading");
+                                div.setAttribute("id", "loading");
+                                document.getElementById("myDIV").style.display = 'block';
+                                document.getElementById("myDIV").appendChild(div);
+                          
+                                document.body.style.overflow = 'hidden'
+                                fetch('https://www.api-email.dopedigital.in/api/send-contact-growing-bricks', {
+                                  method: "post",
+                                  body: JSON.stringify({
+                                      FullName: name.value,
+                                      Email: email.value,
+                                      MobileNo: phone.value,
+                                      domain: 'Growing Bricks',
+                                      sendToEmail: "navneet@growingbricksrealty.com",
+                                      form: 'enquiry'
+                                  }),
+                                  headers: {
+                                    'Accept': 'application/json, text/plain, */*',
+                                    'Content-Type': 'application/json; charset=UTF-8'
+                                  }
+                                  //make sure to serialize your JSON body
+                          
+                                }).then(res => res.json()).then(res => {
+                                  document.getElementById("loading").remove();
+                                  document.getElementById("myDIV").style.display = 'none';
+                                  document.body.style.overflow = 'auto'
+                                  serverSuccessDIV.style.transform = "translate(-50%, 0)";
+                                  serverSuccessDIV.style.opacity = "1";
+                                  serverSuccessDIV.style.visibility = "visible";
+                                  serverSuccessDIV.innerHTML = res.message + `<i class="bi bi-backspace" id="cross" onClick="closeErr('success')">`;
+                          
+                                  setTimeout(() => {
+                                    serverSuccessDIV.style.transform = "translate(-50%, -50px)";
+                                    serverSuccessDIV.style.opacity = "0";
+                                    serverSuccessDIV.style.visibility = "hidden";
+                                  }, 3000);
+                                })
+                                  .catch(err => {
+                                    serverErrorsDIV.style.transform = "translate(-50%, 0)";
+                                    serverErrorsDIV.style.opacity = "1";
+                                    serverErrorsDIV.style.visibility = "visible";
+                                    serverErrorsDIV.innerHTML = err + `<i class="bi bi-backspace" id="cross" onClick="closeErr('error')">`;
+                                    // serverErrorsDIV.appendChild(iCross);
+                                    console.log(serverErrorsDIV)
+                                    document.getElementById("loading").remove();
+                                    document.getElementById("myDIV").style.display = 'none';
+                                    document.body.style.overflow = 'auto';
+                                  })
+                              })
+                              submitBTNModal.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if ((!emailModal || emailModal.value === '') || (!nameModal || nameModal.value === '')) {
+                                  alert('Please fill all required values')
+                                  return;
+                                }
+                          
+                              //   toggleModal();
+                              $("#myModal").modal('hide');
+                          
+                                // const data = new FormData();
+                                // data.append("json", JSON.stringify(payload));
+                          
+                                const div = document.createElement('div');
+                                div.style.alignItems = 'center';
+                                // const iCross = document.createElement('i');
+                                // iCross.setAttribute('class', 'bi bi-backspace');
+                                // iCross.style.padding = '0 0 6px 8px'
+                                div.setAttribute("class", "loading");
+                                div.setAttribute("id", "loading");
+                                document.getElementById("myDIV").style.display = 'block';
+                                document.getElementById("myDIV").appendChild(div);
+                          
+                                document.body.style.overflow = 'hidden'
+                                fetch('https://www.api-email.dopedigital.in/api/send-contact-growing-bricks', {
+                                  method: "post",
+                                  body: JSON.stringify({
+                                  FullName: nameModal.value,
+                                    Email: emailModal.value,
+                                    MobileNo: phoneModal.value,
+                                    domain: 'Growing Bricks',
+                                    sendToEmail: "navneet@growingbricksrealty.com",
+                                    form: 'enquiry'
+                                  }),
+                                  headers: {
+                                    'Accept': 'application/json, text/plain, */*',
+                                    'Content-Type': 'application/json; charset=UTF-8'
+                                  }
+                                  //make sure to serialize your JSON body
+                          
+                                }).then(res => res.json()).then(res => {
+                                  document.getElementById("loading").remove();
+                                  document.getElementById("myDIV").style.display = 'none';
+                                  document.body.style.overflow = 'auto'
+                                  serverSuccessDIV.style.transform = "translate(-50%, 0)";
+                                  serverSuccessDIV.style.opacity = "1";
+                                  serverSuccessDIV.style.visibility = "visible";
+                                  serverSuccessDIV.innerHTML = res.message + `<i class="bi bi-backspace" id="cross" onClick="closeErr('success')">`;
+                          
+                                  setTimeout(() => {
+                                    serverSuccessDIV.style.transform = "translate(-50%, -50px)";
+                                    serverSuccessDIV.style.opacity = "0";
+                                    serverSuccessDIV.style.visibility = "hidden";
+                                  }, 3000);
+                                })
+                                  .catch(err => {
+                                    serverErrorsDIV.style.transform = "translate(-50%, 0)";
+                                    serverErrorsDIV.style.opacity = "1";
+                                    serverErrorsDIV.style.visibility = "visible";
+                                    serverErrorsDIV.innerHTML = err + `<i class="bi bi-backspace" id="cross" onClick="closeErr('error')">`;
+                                    // serverErrorsDIV.appendChild(iCross);
+                                    document.getElementById("loading").remove();
+                                    document.getElementById("myDIV").style.display = 'none';
+                                    document.body.style.overflow = 'auto';
+                                  })
+                              })
+                            </script>
+                                            
+
+
         <script>
             let element = document.getElementById("side-menu");
                                 function toggleMenu() {

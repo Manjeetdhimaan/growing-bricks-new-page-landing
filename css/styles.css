@@ -5171,3 +5171,83 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
         display: block;
     }
   }
+
+  #myDIV {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    display: none;
+  }
+  
+  #serverErrors {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,-50px);
+    bottom: 10%;
+    background-color: rgba(246, 166, 166, 0.648);
+    padding: 4px 16px;
+    color: red;
+    border-radius: 3px;
+    border: 1px solid red;
+    opacity: 0;
+    /* transform: translate(0, -50px); */
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  #serverSuccess {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,-50px);
+    bottom: 10%;
+    background-color: #335580;
+    padding: 4px 16px;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid white;
+    opacity: 0;
+    /* transform: translate(0, -50px); */
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .bi-backspace {
+    padding: 0 0 0 8px;
+    cursor: pointer;
+  }
+  
+  .loading {
+    height: 0;
+    width: 0;
+    padding: 15px;
+    border: 6px solid #ccc;
+    border-right-color: rgb(148, 100, 100);
+    border-radius: 22px;
+    animation: rotate 1s infinite linear;
+    -webkit-animation: rotate 1s infinite linear;
+    /* left, top and position just for the demo! */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+  }
+  
+  @-webkit-keyframes rotate {
+  
+    /* 100% keyframe for  clockwise. 
+  use 0% instead for anticlockwise */
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+  
+    /* 100% keyframe for  clockwise. 
+  use 0% instead for anticlockwise */
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+  }
