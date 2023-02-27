@@ -2509,9 +2509,23 @@ data-styled.g163[id="home-landingstyles__TitleTag-sc-5zh50z-3"] {
     background-image: linear-gradient(45deg, #0008, #000a), url("../images/home-banner-mobile.jpg");
     background-position: center;
 } /*!sc*/
+.slider-2 {
+    background-image: linear-gradient(45deg, #0008, #000a), url("../images/about-bg.jpg");
+    background-position: center;
+} /*!sc*/
+.slider-3 {
+    background-image: linear-gradient(45deg, #0008, #000a), url("../images/blog-landing.jpg");
+    background-position: center;
+} /*!sc*/
 @media (min-width: 560px) {
     .slider-1 {
         background-image: linear-gradient(45deg, #0008, #000a), url("../images/home-landing-bg.jpg");
+    }
+    .slider-2 {
+        background-image: linear-gradient(45deg, #0008, #000a), url("../images/about-bg.jpg");
+    }
+    .slider-3 {
+        background-image: linear-gradient(45deg, #0008, #000a), url("../images/blog-landing.jpg");
     }
 } /*!sc*/
 data-styled.g165[id="home-landingcomponent__ExtendedHomeContainer-sc-1yj3n6l-0"] {
