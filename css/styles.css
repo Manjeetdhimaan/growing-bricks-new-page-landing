@@ -5253,7 +5253,7 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     width: 0;
     padding: 15px;
     border: 6px solid #ccc;
-    border-right-color: rgb(148, 100, 100);
+    border-right-color: rgb(0, 0, 0);
     border-radius: 22px;
     animation: rotate 1s infinite linear;
     -webkit-animation: rotate 1s infinite linear;
@@ -5261,6 +5261,7 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     position: fixed;
     left: 50%;
     top: 50%;
+    z-index: 100000;
   }
   
   @-webkit-keyframes rotate {
@@ -5285,4 +5286,67 @@ data-styled.g141[id="contact__OfficeItem-sc-p4wypw-1"] {
     box-shadow:0 0 0 10000px rgba(0,0,0,.70);
    }
 
+
+   .modal-index {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    overflow-x: hidden;
+    z-index: 10000;
+}
+
+.modal-content {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    max-width: 90%;
+    border-radius: 0.5rem;
+    max-height: 90vh;
+    z-index: 100000;
+}
+
+@media (max-width: 500px) {
+.modal-content {
+ width: 90%;
+}
+}
+/*   
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+} */
+
+.ion-ios-close {
+  font-size: 38px;
+  float: right;
+  cursor: pointer;
+  margin-right: 22px;
+  color: white
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
    

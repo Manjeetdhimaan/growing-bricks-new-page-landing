@@ -138,22 +138,29 @@
                 color:white; font-size: 24px;cursor: pointer;">&#x2715;</span>
         </ul>
         <div id="__next">
+            
             <div class="layoutstyles__StyledLayout-sc-1dmovpg-0 iwUAUC">
                 <div class="containerstyles__StyledContainer-sc-vj1b3n-0
                     jYgPTX">
+                    
                     <nav class="navbarstyles__StyledNav-sc-3ql7pk-3
-                        dgoIKB topheader"><div
+                        dgoIKB topheader">
+                        <div
                             class="navbarstyles__LNC-sc-3ql7pk-0
                             VIrfp">
+                            
                             <a href="index.html"><img style="margin-top: 1.3px"
                                     width="200" height="80"
                                     srcSet="./images/logo/growing-bricks-logo-removebg-preview.png"
                                     src="./images/logo/growing-bricks-logo-removebg-preview.png"
                                     decoding="async" data-nimg="fixed"/></a>
-                        </div><div
+                        </div>
+                        <div
                             class="navbarstyles__SNM-sc-3ql7pk-2 jpBpdZ"
-                            onclick="toggleMenu()"><div
-                                class="navbarstyles__Menu-sc-3ql7pk-5 bOsAVt"><svg
+                            >
+                            <a class="btn btn-primary
+                        rounded trigger" style="color:white; background-color:#e51a4b; border-color:#e51a4b;margin-right:5px">Get a qoute</a><div
+                                class="navbarstyles__Menu-sc-3ql7pk-5 bOsAVt" onclick="toggleMenu()"><svg
                                     stroke="currentColor" fill="currentColor"
                                     stroke-width="0" viewBox="0 0 24 24"
                                     height="1em" width="1em"
@@ -3898,9 +3905,108 @@
                             © 2023 Growing Bricks | Developed by <a
                                 href="https://www.younedia.com/" target="_blank"
                                 style="color:white"><strong>Younedia</strong></a></div></div></footer></div></div>
-        <div id="myDIV"></div>
+   
+
+                                <div class="modal-index">
+                                    <section class="" style="background-color: rgb(0, 0, 0, 0.8)!important;">
+                                        <div class="s">
+                                            <div class="row no-gutters justify-content-center">
+                                                <div class="col-md-12" style="margin: auto;" id="contact">
+                                                    <div class="wrapper">
+                                                        <div class="row g-0">
+                                                            <div class="col-lg-6" style="margin: auto; z-index: 100000;">
+                                                                <i class="ion-ios-close close-button" style="float: right; cursor:
+                                                                    pointer; visibility: hidden;"></i>
+                                                                <div style="background-color: #e51a4b; " class="modal-content
+                                                                    p-md-5 p-4">
+                    
+                                                                    <h3 style="color:white">Contact us</h3>
+                                                                    <p class="mb-4" style="color:white">We're open for any suggestion or
+                                                                        just to
+                                                                        have a chat</p>
+                                                                        <a style="color: white" href="https://api.whatsapp.com/send?phone=9872957158&text=Hi, I would like know more details." target="_blank"><p class="con"><span> Click to chat</span> <img width="50" src="images/logo/Whatsapp-logo-vector-png.png" alt=""> <span>+91 9872957158</span></p></a>
+                    
+                                                                    <form id="contactForm" name="contactForm"
+                                                                        class="contactForm">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" class="form-control" name="name"
+                                                                                        id="name-modal" placeholder="Name *">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" class="form-control" name="phone"
+                                                                                        id="phone-modal" placeholder="Phone *">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <input type="email" class="form-control"
+                                                                                        name="email" id="email-modal" placeholder="Email">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <textarea name="message" class="form-control"
+                                                                                        id="msg-modal" cols="30" rows="4"
+                                                                                        placeholder="Create a message here"></textarea>
+                                                                                </div>
+                                                                            </div>
+                    
+                                                                            <div class="col-md-12" >
+                                                                                <div class="form-group">
+                                                                                    <div class="submitting close-button">
+                                                                                        <input style="background-color:white!important; color: #0b754d
+                                                                                            !important;" type="submit" value="Send Message" id="form-submit-modal" class="btn
+                                                                                            btn-primary">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+   
+                                <div id="myDIV"></div>
         <div id="serverErrors"> </div>
         <div id="serverSuccess"> </div>
+
+        <script>
+            const modal = document.querySelector(".modal-index");
+            const trigger = document.querySelector(".trigger");
+            const closeButton = document.querySelector(".close-button");
+            
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                }
+            }
+
+            trigger.addEventListener("click", toggleModal);
+            closeButton.addEventListener("click", toggleModal);
+            window.addEventListener("click", windowOnClick);
+
+            window.onload = function() {
+                setTimeout(() => {
+                    toggleModal();
+                }, 1000);
+                
+            };
+    </script>
 
         <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -3919,12 +4025,13 @@
                               const nameModal = document.getElementById('name-modal');
                               const emailModal = document.getElementById('email-modal');
                               const phoneModal= document.getElementById('phone-modal');
+                              const messageModal= document.getElementById('msg-modal');
                           
                               const deleteBTN = document.getElementById('cross');
                           
                               closeErr = (e) => {
                                 if(e === 'error') {
-                                  serverErrorsDIV.style.visibility = 'hidden';
+                                serverErrorsDIV.style.visibility = 'hidden';
                                 serverErrorsDIV.style.opacity = '0';
                                 serverErrorsDIV.style.transform = "translate(-50%, -50px)";
                                 }
@@ -3935,12 +4042,10 @@
                           
                               submitBTN.addEventListener('click', (e) => {
                                 e.preventDefault();
-                                if ((!email || email.value === '') || (!name || name.value === '')) {
+                                if ((!name || name.value === '') || (!phone || phone.value === '')) {
                                   alert('Please fill all required values')
                                   return;
                                 }
-                          
-                              
                           
                                 // const data = new FormData();
                                 // data.append("json", JSON.stringify(payload));
@@ -3971,7 +4076,6 @@
                                     'Content-Type': 'application/json; charset=UTF-8'
                                   }
                                   //make sure to serialize your JSON body
-                          
                                 }).then(res => res.json()).then(res => {
                                   document.getElementById("loading").remove();
                                   document.getElementById("myDIV").style.display = 'none';
@@ -4001,12 +4105,12 @@
                               })
                               submitBTNModal.addEventListener('click', (e) => {
                                 e.preventDefault();
-                                if ((!emailModal || emailModal.value === '') || (!nameModal || nameModal.value === '')) {
+                                if ((!phoneModal || phoneModal.value === '') || (!nameModal || nameModal.value === '')) {
                                   alert('Please fill all required values')
                                   return;
                                 }
                           
-                              //   toggleModal();
+                                toggleModal();
                               $("#myModal").modal('hide');
                           
                                 // const data = new FormData();
@@ -4037,9 +4141,8 @@
                                     'Accept': 'application/json, text/plain, */*',
                                     'Content-Type': 'application/json; charset=UTF-8'
                                   }
-                                  //make sure to serialize your JSON body
-                          
                                 }).then(res => res.json()).then(res => {
+                                  //make sure to serialize your JSON body
                                   document.getElementById("loading").remove();
                                   document.getElementById("myDIV").style.display = 'none';
                                   document.body.style.overflow = 'auto'
